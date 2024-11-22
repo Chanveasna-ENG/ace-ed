@@ -1,0 +1,80 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400&display=swap');
+
+/* Define CSS variables for theme colors */
+:root {
+    --color-white: #FFFFFF;
+    --color-light-gray: #DEDEDE;
+    --color-gray: #BFBFBF;
+    --color-blue: #2547A0;
+    --color-dark-gray: #212020;
+}
+
+body {
+    background-color: var(--color-white);
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 0;
+    width: 85%;
+}
+
+p {
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-size: 14pt;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo Black', Arial, sans-serif;
+    color: var(--color-dark-gray);
+    font-size: 20pt;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.primary_button {
+    background-color: var(--color-dark-gray);
+    border: none;
+    border-radius: 20px;
+    color: var(--color-white);
+    cursor: pointer;
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 60px 0 60px 0;
+    padding: 30px 50px 30px 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.primary_button:hover {
+    transition: background-color 0.3s;
+    filter: invert(10%);
+}
+
+.secondary_button {
+    /* background-color: var(--color-white); */
+    border: var(--color-dark-gray) 1px solid;
+    border-radius: 20px;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 60px 0 60px 0;
+    padding: 30px 50px 30px 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.secondary_button:hover {
+    transition: background-color 0.3s;
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
