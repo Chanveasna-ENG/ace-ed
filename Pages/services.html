@@ -1,51 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../Styles/root.css">
-    <link rel="stylesheet" href="../Styles/header.css">
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/root.css" />
+    <link rel="stylesheet" href="../Styles/header.css" />
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="../Styles/service.css" />
     <title>ACE-ED: Book your tutor</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <nav class="nav flex">
-        <div class="nav__menu nav__left">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav__menu nav__left">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-        <div class="nav__logo nav_center">
-            <!-- <img src="images/logo.png" alt="ACE-ED"> -->
-             <h1>ACE-ED</h1>
-        </div>
+      <div class="nav__logo nav_center">
+        <!-- <img src="images/logo.png" alt="ACE-ED"> -->
+        <h1>ACE-ED</h1>
+      </div>
 
-        <div class="nav__right">
-            <div class="nav__login">
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                </ul>
-            </div>
-            <!-- Social Links -->
-            <div class="nav__social">
-                <ul>
-                    <li><a href="https://www.facebook.com/"><img class="logo" src="../images/facebook.png" alt="Facebook"></a></li>
-                    <li><a href="https://www.instagram.com/"><img class="logo" src="../images/instagram.png" alt="Instagram"></a></li>
-                    <li><a href="https://www.twitter.com/"><img class="logo" src="../images/x.png" alt="X"></a></li>
-                </ul>
-            </div>
+      <div class="nav__right">
+        <div class="nav__login">
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
         </div>
+        <!-- Social Links -->
+        <div class="nav__social">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/"
+                ><img class="logo" src="../images/facebook.png" alt="Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/"
+                ><img
+                  class="logo"
+                  src="../images/instagram.png"
+                  alt="Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com/"
+                ><img class="logo" src="../images/x.png" alt="X"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- Write your code here -->
+    <div class="container">
+      <!-- Services Section -->
+      <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card" data-service="academic">
+            <h3>📚 Academic Tutoring</h3>
+            <p>One-on-one tutoring in various subjects</p>
+            <div class="service-tags">
+              <span class="tag">Math</span>
+              <span class="tag">Science</span>
+              <span class="tag">English</span>
+            </div>
+          </div>
+          <div class="service-card" data-service="test-prep">
+            <h3>✏️ Test Preparation</h3>
+            <p>Structured prep for standardized tests</p>
+            <div class="service-tags">
+              <span class="tag">SAT</span>
+              <span class="tag">ACT</span>
+              <span class="tag">GRE</span>
+            </div>
+          </div>
+          <div class="service-card" data-service="language">
+            <h3>🌍 Language Learning</h3>
+            <p>Learn new languages with native speakers</p>
+            <div class="service-tags">
+              <span class="tag">English</span>
+              <span class="tag">Spanish</span>
+              <span class="tag">French</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-</body>
+      <!-- Filters Section -->
+      <section class="filters">
+        <div class="filter-group">
+          <label for="subject-filter">Subject:</label>
+          <select id="subject-filter">
+            <option value="all">All Subjects</option>
+            <option value="Math">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="English">English</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="price-filter">Price Range:</label>
+          <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="20-30">$20-30/hour</option>
+            <option value="31-40">$31-40/hour</option>
+            <option value="41-50">$41-50/hour</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Tutors Section -->
+      <section class="tutors">
+        <h2 class="section-title">Available Tutors</h2>
+        <div class="tutors-grid" id="tutors-grid">
+          <!-- Tutors will be populated by JavaScript -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Book Your Session</h2>
+        <form id="booking-form">
+          <input type="hidden" id="tutor-name" name="tutor-name" />
+          <input type="hidden" id="session-time" name="session-time" />
+          <input type="hidden" id="session-price" name="session-price" />
+
+          <div class="form-group">
+            <label for="user-name">Full Name:</label>
+            <input type="text" id="user-name" name="user-name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="user-email">Email:</label>
+            <input type="email" id="user-email" name="user-email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="user-phone">Phone Number:</label>
+            <input type="tel" id="user-phone" name="user-phone" required />
+          </div>
+          <img
+            src="../Images/ABA.png"
+            alt="ABA Pay QR Code"
+            style="max-width: 300px; margin-bottom: 1rem"
+          />
+          <p>Please note your name in the payment.</p>
+
+          <div class="booking-summary">
+            <h3>Booking Summary</h3>
+            <p>Tutor: <span id="summary-tutor"></span></p>
+            <p>Time: <span id="summary-time"></span></p>
+            <p>Price: <span id="summary-price"></span></p>
+          </div>
+
+          <button type="submit" class="submit-btn">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../Scripts/service.js"></script>
+  </body>
 </html>
