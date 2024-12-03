@@ -3,5 +3,60 @@
     border-radius: 20px;
     padding: 60px;
     margin: 60px 0;
+    display: flex;
+
+}
+/* Container for the images */
+.image-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 400px; /* Adjust to fit your layout */
+    height: 400px; /* Adjust height */
 }
 
+/* Wrapper for individual images */
+.image-wrapper {
+    position: absolute;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensures rounded corners apply to the images */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/* Position each image for overlap */
+.image-1 {
+    top: 0;
+    left: 0;
+    z-index: 3; /* Topmost image */
+    transform: rotate(-5deg); /* Slight tilt for aesthetic */
+}
+
+.image-2 {
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    transform: rotate(0deg); /* Centered image */
+}
+
+.image-3 {
+    top: 40px;
+    left: 40px;
+    z-index: 1; /* Bottommost image */
+    transform: rotate(5deg); /* Slight tilt for aesthetic */
+}
+
+/* Images inside the wrapper */
+.image-wrapper img {
+    width: 150px; /* Adjust image size */
+    height: 150px;
+    object-fit: cover; /* Ensures the image fits perfectly */
+}
+
+/* Hover effect */
+.image-wrapper:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    z-index: 4; /* Bring hovered image to the top */
+}
