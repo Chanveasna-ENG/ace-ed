@@ -273,6 +273,18 @@ bookingForm.addEventListener('submit', (e) => {
         cardExpiry: document.getElementById('card-expiry').value,
         cardCvv: document.getElementById('card-cvv').value
     };
+    // Create custom alert modal
+    const alertModal = document.createElement('div');
+    alertModal.style.position = 'fixed';
+    alertModal.style.top = '50%';
+    alertModal.style.left = '50%';
+    alertModal.style.transform = 'translate(-50%, -50%)';
+    alertModal.style.backgroundColor = '#f0f0f0';
+    alertModal.style.padding = '20px';
+    alertModal.style.borderRadius = '10px';
+    alertModal.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+    alertModal.style.zIndex = '1000';
+    alertModal.style.textAlign = 'center';
 
     // Here you would typically send this data to your server
     console.log('Booking submitted:', formData);

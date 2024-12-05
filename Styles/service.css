@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
@@ -25,7 +25,7 @@ body {
 .section-title {
     font-size: 36px; 
     margin-bottom: 30px;
-    color: #2c3e50;
+    color: var(--color-dark-gray);
     text-align: center;
 }
 
@@ -43,6 +43,13 @@ body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+.service-card img {
+    max-width: 100%; /* Make image width fit the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing */
+    margin: 0.5rem 0; /* Add some vertical margin */
+    border-radius: 8px; /* Optional: add rounded corners to match card style */
 }
 
 .service-card:hover {
