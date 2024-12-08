@@ -31,25 +31,26 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px; 
     margin-bottom: 40px;
 }
 
 .service-card {
-    background:var(--color-light-gray);
+    background: var(--color-light-gray);
     border-radius: 12px; 
     padding: 30px; 
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
 .service-card img {
-    max-width: 100%; /* Make image width fit the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra spacing */
-    margin: 0.5rem 0; /* Add some vertical margin */
-    border-radius: 8px; /* Optional: add rounded corners to match card style */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem 0;
+    border-radius: 8px;
 }
 
 .service-card:hover {
@@ -107,7 +108,7 @@ select {
 /* Tutors Section */
 .tutors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
 
@@ -173,20 +174,20 @@ select {
 .time-select {
     width: 100%;
     margin-bottom: 15px;
-    padding: 12px; /* Added padding */
-    font-size: 16px; /* Added font size */
+    padding: 12px;
+    font-size: 16px;
 }
 
 .book-btn {
     width: 100%;
-    padding: 15px; /* Increased from 10px */
+    padding: 15px;
     background: #3498db;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s ease;
-    font-size: 18px; /* Added font size */
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -194,16 +195,24 @@ select {
     background: #2980b9;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .services-grid,
+    .tutors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .services-grid,
     .tutors-grid {
         grid-template-columns: 1fr;
     }
+    
     .filters {
         flex-direction: column;
     }
     
-    /* Added responsive font sizes */
     .section-title {
         font-size: 28px;
     }
