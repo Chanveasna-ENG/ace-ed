@@ -26,7 +26,12 @@ p {
     font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Archivo Black', Arial, sans-serif;
     color: var(--color-dark-gray);
     font-size: 20pt;
@@ -34,7 +39,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
 }
 
+img {
+    border-radius: 20px;
+}
+
 .primary_button {
+
     background-color: var(--color-dark-gray);
     border: none;
     border-radius: 20px;
@@ -77,4 +87,38 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
     background-color: var(--color-dark-gray);
     color: var(--color-white);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-dark-gray);
+}
+
+.footer-row {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-item h2{
+    color: var(--color-gray);
+}
+
+.footer-item nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--color-dark-gray);
+}
+
+.footer-item p {
+    margin: 0;
+    color: var(--color-gray);
 }
