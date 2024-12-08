@@ -4,16 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="../Styles/root.css">
     <link rel="stylesheet" href="../Styles/header.css">
     <link rel="stylesheet" href="../Styles/style.css">
     <title>ACE-ED: Book your tutor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e0f4f1;
+            padding: 10px 20px;
+        }
+
+        .nav__menu ul, .nav__login ul, .nav__social ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav__menu a, .nav__login a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+
+        .nav__social a {
+            margin: 0 5px;
+        }
+
+        .nav__social img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .hero__content {
+            width: 60%;
+        }
+
+        .hero__content h1 {
+            font-size: 60px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero__content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .primary_button, .secondary_button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .primary_button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+        }
+
+        .secondary_button {
+            background-color: transparent;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+        }
+
+        .modal {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .modal-content label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-content .form-footer a {
+            margin: 10px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <nav class="nav flex">
+    <nav class="navbar">
         <div class="nav__menu nav__left">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -23,18 +175,16 @@
         </div>
 
         <div class="nav__logo nav_center">
-            <!-- <img src="images/logo.png" alt="ACE-ED"> -->
-             <h1>ACE-ED</h1>
+            <h1>ACE-ED</h1>
         </div>
 
         <div class="nav__right">
             <div class="nav__login">
                 <ul>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#" onclick="openLoginModal()">Login</a></li>
                     <li><a href="register.html">Register</a></li>
                 </ul>
             </div>
-            <!-- Social Links -->
             <div class="nav__social">
                 <ul>
                     <li><a href="https://www.facebook.com/"><img class="logo" src="../images/facebook.png" alt="Facebook"></a></li>
@@ -45,7 +195,54 @@
         </div>
     </nav>
 
-    <!-- Write your code here -->
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1>CONNECT WITH TOP TUTORS <br> ANYTIME, ANYWHERE!</h1>
+                <p>
+                    Get personalized online tutoring, test prep, and homeschooling support from expert tutors across subjects and languages. Learning made flexible, accessible, and tailored to you.
+                </p>
+                <div>
+                    <a href="register.html" class="primary_button">Find Your Tutor</a>
+                    <a href="register.html" class="secondary_button">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Welcome to ACE Ed</h2>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+
+                <button type="submit">Sign in</button>
+            </form>
+            <div class="form-footer">
+                <a href="#">Forgot Password?</a>
+                <a href="register.html">Create account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        window.onload = function () {
+            openLoginModal();
+        };
+    </script>
 </body>
-</html>
+
+</html> 
